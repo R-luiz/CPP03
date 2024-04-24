@@ -1,11 +1,13 @@
 
 #pragma once
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 #include <iostream>
 #include <string>
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string name;
 		int hitpoints;
 		int energyPoints;
@@ -20,3 +22,4 @@ class ClapTrap
 		void beRepaired(unsigned int amount);
 		ClapTrap & operator=(ClapTrap const & clap);
 };
+#endif
