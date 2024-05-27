@@ -38,7 +38,7 @@ void ScavTrap::attack(std::string const & target)
 		std::cout << "ScavTrap " << name << " is out of energy" << std::endl;
 		return ;
 	}
-	std::cout << "ScavTrap " << name << " attack " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
+	std::cout << "ScavTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
 }
 
 void ScavTrap::guardGate()

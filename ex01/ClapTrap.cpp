@@ -18,18 +18,30 @@ ClapTrap::~ClapTrap()
 
 void ClapTrap::attack(std::string const & target)
 {
+	if (this->energyPoints == 0)
+	{
+		std::cout << "ClapTrap " << name << " can't attack, energy points are at 0!" << std::endl;
+		return ;
+	}
 	this->energyPoints--;
-	std::cout << "ClapTrap " << name << " attack " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	this->hitpoints -= amount;
-	std::cout << "ClapTrap " << name << " take " << amount << " points of damage!" << std::endl;
+	if (this->hitpoints < 0)
+		this->hitpoints = 0;
+	std::cout << "ClapTrap " << name << " takes " << amount << " points of damage!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+	if (this->energyPoints == 0)
+	{
+		std::cout << "ClapTrap " << name << " can't be repaired, energy points are at 0!" << std::endl;
+		return ;
+	}
 	this->hitpoints += amount;
 	if (this->hitpoints > 10)
 		this->hitpoints = 10;

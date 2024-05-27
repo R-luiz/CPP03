@@ -7,7 +7,8 @@ int main(void){
 	ClapTrap claptrap2(claptrap);
 	ClapTrap claptrap3;
 	claptrap3 = claptrap2;
-	claptrap.attack("target");
+	for (int i = 0; i < 12; i++)
+		claptrap.attack("target");
 	claptrap.takeDamage(5);
 	claptrap.beRepaired(5);
 	ScavTrap scavtrap("ScavTrap");
@@ -22,7 +23,8 @@ int main(void){
 	FragTrap fragtrap2(fragtrap);
 	FragTrap fragtrap3;
 	fragtrap3 = fragtrap2;
-	fragtrap.attack("target");
+	for (int i = 0; i < 5; i++)
+		fragtrap.attack("target");
 	fragtrap.takeDamage(5);
 	fragtrap.beRepaired(5);
 	fragtrap.highFivesGuys();
